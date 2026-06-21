@@ -1,0 +1,163 @@
+/* Calendar Component CSS */
+
+.calendar-section {
+  background-color: var(--bg-soft);
+  border-bottom: 1px solid rgba(21, 101, 192, 0.05);
+}
+
+.calendar-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding: 10px 0 30px;
+  margin-bottom: 40px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Scrollbar */
+.calendar-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.calendar-scroll-wrapper::-webkit-scrollbar-track {
+  background: rgba(21, 101, 192, 0.02);
+  border-radius: var(--radius-full);
+}
+
+.calendar-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(21, 101, 192, 0.1);
+  border-radius: var(--radius-full);
+}
+
+.calendar-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(21, 101, 192, 0.2);
+}
+
+.calendar-days-row {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  padding: 0 4px;
+}
+
+.calendar-day-card {
+  width: 150px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: var(--transition-normal);
+}
+
+.calendar-day-card.available {
+  border-top: 5px solid #4CAF50;
+}
+
+.calendar-day-card.booked {
+  border-top: 5px solid #F44336;
+  opacity: 0.75;
+}
+
+.calendar-day-card.half-day {
+  border-top: 5px solid #FFC107;
+}
+
+.cal-month {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.cal-num {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--text-dark);
+  line-height: 1;
+  margin: 6px 0;
+}
+
+.cal-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.cal-status-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-soft);
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.calendar-day-card.available .cal-status-badge {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+}
+
+.calendar-day-card.booked .cal-status-badge {
+  background-color: #FFEBEE;
+  color: #C62828;
+}
+
+.calendar-day-card.half-day .cal-status-badge {
+  background-color: #FFFDE7;
+  color: #F57F17;
+}
+
+.cal-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* Sync Notice */
+.calendar-sync-notice {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  text-align: left;
+}
+
+.sync-icon-box {
+  font-size: 2.2rem;
+  background-color: var(--bg-soft);
+  min-width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(21, 101, 192, 0.05);
+}
+
+.sync-text h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.sync-text p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .calendar-sync-notice {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+}

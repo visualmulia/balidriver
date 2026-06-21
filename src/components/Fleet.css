@@ -1,0 +1,209 @@
+/* Fleet Component CSS */
+
+.fleet-section {
+  background-color: var(--bg-white);
+  border-bottom: 1px solid rgba(21, 101, 192, 0.05);
+}
+
+.fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.fleet-card {
+  padding: 40px 30px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.fleet-card.popular {
+  border: 2px solid var(--primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.best-badge {
+  position: absolute;
+  top: -12px;
+  right: 30px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.fleet-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.fleet-icon-box {
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent-soft);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.fleet-card.popular .fleet-icon-box {
+  background-color: #FFF3E0;
+  color: var(--primary);
+}
+
+.fleet-name {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--text-dark);
+}
+
+.fleet-models {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.fleet-specs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  background-color: var(--bg-soft);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+}
+
+.fleet-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.fleet-price-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 24px;
+  border-top: 1px solid rgba(21, 101, 192, 0.05);
+  padding-top: 20px;
+}
+
+.price-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.price-amount {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--accent);
+}
+
+.fleet-card.popular .price-amount {
+  color: var(--primary-dark);
+}
+
+.fleet-cta {
+  width: 100%;
+}
+
+.fleet-card.popular .fleet-cta {
+  background-color: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.fleet-card.popular .fleet-cta:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* Inclusions Box */
+.fleet-inclusion-notice {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: left;
+}
+
+.fleet-inclusion-notice h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.inclusions-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.inclusions-list li {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.fleet-inclusion-notice .divider {
+  height: 1px;
+  background-color: rgba(21, 101, 192, 0.08);
+  margin-bottom: 20px;
+}
+
+.exclusion-note {
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* Responsive columns */
+@media (max-width: 1024px) {
+  .fleet-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fleet-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto 40px;
+  }
+  
+  .inclusions-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .fleet-inclusion-notice {
+    padding: 24px;
+  }
+}
