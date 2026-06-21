@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './BookingForm.css';
 import { fleets } from './Fleet';
+import { saveBooking } from '../utils/storage';
 
 const services = [
   { id: 'full-day', name: 'Full Day Tour Charter (10 hrs)', rate: 1 },
@@ -61,14 +62,31 @@ const BookingForm = () => {
     const service = services.find(s => s.id === booking.serviceId);
     const formatPrice = (p) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(p);
 
+    // Generate unique booking ID
+    const bookingId = 'bk-' + Math.floor(100000 + Math.random() * 900000);
+
+    // Save booking data to localStorage
+    const bookingData = {
+      id: bookingId,
+      name: booking.name,
+      whatsapp: booking.whatsapp,
+      serviceName: service ? service.name : '',
+      carName: car ? car.name : '',
+      date: booking.date,
+      time: booking.time,
+      duration: booking.duration,
+      pickupLoc: booking.pickupLoc,
+      dropoffLoc: booking.dropoffLoc,
+      notes: booking.notes,
+      totalPrice: totalPrice
+    };
+    saveBooking(bookingData);
+
     // Construct Google Calendar template URL for driver's quick add
-    // Format date: YYYYMMDD
     const cleanDate = booking.date.replace(/-/g, '');
     const cleanTime = booking.time.replace(/:/g, '');
-    // e.g. Event Title: Booked: [Name] - [Service]
     const eventTitle = `Booked: ${booking.name} (${service ? service.name : ''})`;
     const eventStart = `${cleanDate}T${cleanTime}00`;
-    // End time is roughly start time + 10 hours for full day, 5 hours for half, 2 hours for transfer
     const durationHours = booking.serviceId === 'full-day' ? 10 : booking.serviceId === 'half-day' ? 5 : 2;
     const endHour = parseInt(booking.time.split(':')[0]) + durationHours;
     const formattedEndHour = endHour < 10 ? `0${endHour}` : endHour > 23 ? '23' : `${endHour}`;
@@ -82,6 +100,9 @@ Notes: ${booking.notes || 'None'}
 Total Price: ${formatPrice(totalPrice)}`;
 
     const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStart}/${eventEnd}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(booking.pickupLoc)}`;
+
+    // Generate driver confirmation link
+    const confirmUrl = `${window.location.origin}${window.location.pathname}?view=confirm&id=${bookingId}`;
 
     // Format WhatsApp message
     const msg = `Hello FM Prabowo Driver 🌴🚗
@@ -105,6 +126,9 @@ ${booking.notes ? `• Trip Itinerary / Notes: ${booking.notes}` : ''}
 --------------------------------------
 📲 *Driver Calendar Quick Add:*
 ${calendarUrl}
+
+🔗 *Driver Instant Confirmation (One-Click Approve):*
+${confirmUrl}
 
 Please confirm my charter booking. Thank you!`;
 

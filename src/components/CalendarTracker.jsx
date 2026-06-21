@@ -1,23 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './CalendarTracker.css';
+import { getBookings, getBlockedDates } from '../utils/storage';
 
-// Mock schedule data representing driver's active calendar
-const bookedDates = {
+// Mock schedule base data
+const baseBookedDates = {
   '2026-06-20': { status: 'booked', label: 'Ubud Tour (Full Day)' },
-  '2026-06-21': { status: 'available', label: 'Open Schedule' },
   '2026-06-22': { status: 'booked', label: 'Airport Transfer + Kuta' },
-  '2026-06-23': { status: 'available', label: 'Open Schedule' },
-  '2026-06-24': { status: 'booked', label: 'Kintamani Volcanic Tour' },
-  '2026-06-25': { status: 'half-day', label: 'Available (PM Only)' },
-  '2026-06-26': { status: 'available', label: 'Open Schedule' },
-  '2026-06-27': { status: 'booked', label: 'Nusa Dua Beach Tour' },
-  '2026-06-28': { status: 'available', label: 'Open Schedule' },
-  '2026-06-29': { status: 'available', label: 'Open Schedule' },
-  '2026-06-30': { status: 'booked', label: 'Uluwatu Sunset Tour' }
 };
 
 const CalendarTracker = () => {
-  // Generate list of next 10 days starting from current date (June 21, 2026 as per local system date)
+  const [dynamicSchedule, setDynamicSchedule] = useState({});
+
+  useEffect(() => {
+    const bookings = getBookings();
+    const blockedDates = getBlockedDates();
+    
+    // Combine base schedule with dynamic schedules
+    const scheduleMap = { ...baseBookedDates };
+    
+    // Add manually blocked dates from driver dashboard
+    blockedDates.forEach(dateStr => {
+      scheduleMap[dateStr] = { status: 'booked', label: 'Unavailable' };
+    });
+    
+    // Add confirmed bookings from client bookings
+    bookings.forEach(b => {
+      if (b.status === 'confirmed') {
+        scheduleMap[b.date] = { 
+          status: 'booked', 
+          label: `${b.name} (${b.duration > 1 ? `${b.duration} Days` : 'Tour'})` 
+        };
+      }
+    });
+
+    setDynamicSchedule(scheduleMap);
+  }, []);
+
+  // Generate list of next 9 days starting from current date (June 21, 2026 as per local system date)
   const baseDate = new Date('2026-06-21');
   const daysToShow = Array.from({ length: 9 }).map((_, i) => {
     const d = new Date(baseDate);
@@ -27,7 +46,7 @@ const CalendarTracker = () => {
     const dayNum = d.getDate();
     const monthName = d.toLocaleDateString('en-US', { month: 'short' });
     
-    const schedule = bookedDates[dateStr] || { status: 'available', label: 'Open Schedule' };
+    const schedule = dynamicSchedule[dateStr] || { status: 'available', label: 'Open Schedule' };
     return {
       dateStr,
       dayName,

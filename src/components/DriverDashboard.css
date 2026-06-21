@@ -1,0 +1,446 @@
+/* Driver Dashboard Styles */
+
+.dashboard-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+  font-family: var(--font-body);
+  background-color: var(--bg-soft);
+  min-height: 100vh;
+}
+
+/* Header bar */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 30px;
+  background-color: var(--bg-white);
+  border: 1px solid rgba(21, 101, 192, 0.08);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg);
+  margin-bottom: 24px;
+}
+
+.db-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+}
+
+.logo-emoji {
+  font-size: 2.2rem;
+}
+
+.db-brand h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.db-brand p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.db-quick-stats {
+  display: flex;
+  gap: 12px;
+}
+
+.stat-pill {
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.stat-pill.pending {
+  background-color: #FFF3E0;
+  color: #E65100;
+}
+
+.stat-pill.confirmed {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+}
+
+/* Navigation Tabs */
+.db-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgba(21, 101, 192, 0.05);
+  padding: 6px;
+  border-radius: var(--radius-md);
+  margin-bottom: 30px;
+}
+
+.db-tab-btn {
+  padding: 14px;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+}
+
+.db-tab-btn.active {
+  background-color: var(--bg-white);
+  color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Filters */
+.db-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: 1px solid rgba(21, 101, 192, 0.1);
+  background-color: var(--bg-white);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-btn.active {
+  background-color: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.badge-count {
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+}
+
+/* Empty State */
+.empty-state {
+  padding: 60px 40px;
+  background-color: var(--bg-white);
+  border-radius: var(--radius-lg);
+}
+
+.empty-state span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.empty-state h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Booking Cards */
+.bookings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-card {
+  padding: 24px;
+  background-color: var(--bg-white);
+  border-radius: var(--radius-lg);
+  text-align: left;
+  border-left: 6px solid #B0BEC5;
+}
+
+.booking-card.status-pending {
+  border-left-color: var(--primary);
+}
+
+.booking-card.status-confirmed {
+  border-left-color: #4CAF50;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.card-header h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.client-wa {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+}
+
+.status-badge.pending {
+  background-color: #FFF3E0;
+  color: #E65100;
+}
+
+.status-badge.confirmed {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+}
+
+.card-divider {
+  height: 1px;
+  background-color: rgba(21, 101, 192, 0.05);
+  margin: 16px 0;
+}
+
+.card-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+
+.info-item.full-width {
+  grid-column: span 2;
+}
+
+.info-item span {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.info-item strong {
+  color: var(--text-dark);
+  font-weight: 800;
+}
+
+.card-notes {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-style: italic;
+  font-size: 0.8rem;
+  background: var(--bg-soft);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  border-left: 2px solid var(--primary);
+  margin-top: 4px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.price-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.85rem;
+}
+
+.price-box span {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.price-box strong {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--accent);
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-action {
+  padding: 10px 16px;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 800;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-action.approve {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn-action.approve:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-action.decline {
+  background-color: rgba(244, 67, 54, 0.08);
+  color: #C62828;
+}
+
+.btn-action.decline:hover {
+  background-color: rgba(244, 67, 54, 0.15);
+}
+
+/* Availability Styles */
+.info-card {
+  padding: 20px;
+  background-color: var(--bg-white);
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.info-card h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.info-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.availability-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.avail-card {
+  padding: 16px 20px;
+  background-color: var(--bg-white);
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-right: 5px solid #4CAF50;
+  text-align: left;
+}
+
+.avail-card.booked,
+.avail-card.blocked {
+  border-right-color: #F44336;
+}
+
+.avail-info h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.avail-status {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.btn-toggle-block {
+  padding: 10px 16px;
+  border: 1px solid rgba(21, 101, 192, 0.12);
+  background-color: var(--bg-soft);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-toggle-block.blocked {
+  background-color: #FFEEEF;
+  color: #C62828;
+  border-color: #FFCDD2;
+}
+
+.btn-toggle-block:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.db-footer-nav {
+  margin-top: 40px;
+}
+
+.link-home {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.link-home:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .db-quick-stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .card-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-item.full-width {
+    grid-column: span 1;
+  }
+}

@@ -1,0 +1,241 @@
+/* Driver Confirmation Page Styles */
+
+.confirm-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-soft);
+  padding: 40px 20px;
+  font-family: var(--font-body);
+}
+
+.confirm-card {
+  width: 100%;
+  max-width: 520px;
+  padding: 36px 30px;
+  background: var(--bg-white);
+  border: 1px solid rgba(21, 101, 192, 0.08);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg);
+}
+
+.confirm-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.confirm-brand span {
+  font-size: 2.5rem;
+}
+
+.confirm-brand h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.badge-pwa {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+}
+
+.confirm-emoji {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(21, 101, 192, 0.08);
+  margin: 20px 0;
+}
+
+/* Alerts */
+.alert {
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.alert h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.alert-success {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+  border: 1px solid #C8E6C9;
+}
+
+.alert-danger {
+  background-color: #FFEBEE;
+  color: #C62828;
+  border: 1px solid #FFCDD2;
+}
+
+.alert-pending {
+  background-color: #FFF3E0;
+  color: #E65100;
+  border: 1px solid #FFE0B2;
+}
+
+/* Booking details box */
+.booking-details-box {
+  background-color: var(--bg-soft);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.booking-details-box h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 0.9rem;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(21, 101, 192, 0.05);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row span {
+  color: var(--text-muted);
+  font-weight: 600;
+  min-width: 100px;
+}
+
+.detail-row strong {
+  color: var(--text-dark);
+  font-weight: 800;
+  text-align: right;
+}
+
+.detail-row a {
+  color: var(--accent);
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.text-orange {
+  color: var(--primary) !important;
+}
+
+.notes-row {
+  flex-direction: column;
+  gap: 6px;
+}
+
+.notes-row span {
+  width: 100%;
+}
+
+.notes-row p {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-style: italic;
+  font-size: 0.85rem;
+  background: var(--bg-white);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--primary);
+  width: 100%;
+}
+
+.price-row {
+  padding-top: 16px;
+  border-bottom: none;
+}
+
+.price-row span {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-weight: 800;
+}
+
+.price-amount {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--accent);
+}
+
+/* Buttons Grid */
+.action-buttons-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-approve {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  font-size: 1rem;
+}
+
+.btn-approve:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.btn-decline {
+  width: 100%;
+  padding: 16px;
+  font-size: 1rem;
+}
+
+.footer-links {
+  margin-top: 20px;
+}
+
+.link-dashboard {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.link-dashboard:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .confirm-card {
+    padding: 24px 20px;
+  }
+  
+  .booking-details-box {
+    padding: 16px;
+  }
+}
