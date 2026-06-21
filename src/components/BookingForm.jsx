@@ -12,7 +12,7 @@ const services = [
 const BookingForm = () => {
   const [booking, setBooking] = useState({
     serviceId: 'full-day',
-    carId: 'premium-mpv',
+    carId: 'standard-mpv',
     date: '',
     time: '',
     duration: 1, // days
@@ -84,7 +84,7 @@ Total Price: ${formatPrice(totalPrice)}`;
     const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStart}/${eventEnd}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(booking.pickupLoc)}`;
 
     // Format WhatsApp message
-    const msg = `Hello Wayan Driver 🌴🚗
+    const msg = `Hello FM Prabowo Driver 🌴🚗
 I would like to book a travel charter service:
 
 *Booking details:*
@@ -108,7 +108,7 @@ ${calendarUrl}
 
 Please confirm my charter booking. Thank you!`;
 
-    const driverWA = '6281289653355'; // Driver WhatsApp
+    const driverWA = '6282236551616'; // Driver WhatsApp
     const url = `https://wa.me/${driverWA}?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
   };
@@ -142,16 +142,13 @@ Please confirm my charter booking. Thank you!`;
 
                 <div className="form-group">
                   <label htmlFor="carId">Vehicle Type</label>
-                  <select 
+                  <input 
+                    type="text" 
                     id="carId" 
-                    name="carId" 
-                    value={booking.carId}
-                    onChange={handleInputChange}
-                  >
-                    {fleets.map(c => (
-                      <option key={c.id} value={c.id}>{c.name} ({c.models})</option>
-                    ))}
-                  </select>
+                    value="Toyota Avanza (Standard MPV)" 
+                    readOnly 
+                    className="readonly-input"
+                  />
                 </div>
               </div>
 

@@ -47,7 +47,7 @@ const CalendarTracker = () => {
           <span className="subtitle">Driver Schedule Tracker</span>
           <h2 className="title">Availability Status</h2>
           <p className="description">
-            Check Kutut Wayan's live schedule below. Book open slots instantly to secure your tour dates.
+            Check FM Prabowo's live schedule below. Book open slots instantly to secure your tour dates.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ const CalendarTracker = () => {
           <div className="sync-text">
             <h3>Automated Calendar Sync Active</h3>
             <p>
-              This tracker connects directly with the driver's phone **Google Calendar**. When Kutut logs a booking in his phone, the website schedule updates instantly. No manual web updates required.
+              This tracker connects directly with the driver's phone **Google Calendar**. When FM Prabowo logs a booking in his phone, the website schedule updates instantly. No manual web updates required.
             </p>
           </div>
         </div>

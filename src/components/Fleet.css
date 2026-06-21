@@ -7,7 +7,8 @@
 
 .fleet-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 400px));
+  justify-content: center;
   gap: 30px;
   margin-bottom: 60px;
 }
@@ -186,19 +187,10 @@
 
 /* Responsive columns */
 @media (max-width: 1024px) {
-  .fleet-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
+  /* removed grid override */
 }
 
 @media (max-width: 768px) {
-  .fleet-grid {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    margin: 0 auto 40px;
-  }
-  
   .inclusions-list {
     grid-template-columns: 1fr;
   }

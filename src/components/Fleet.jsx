@@ -4,36 +4,14 @@ import './Fleet.css';
 export const fleets = [
   {
     id: 'standard-mpv',
-    name: "Standard MPV",
-    models: "Toyota Avanza / Suzuki Ertiga",
+    name: "Toyota Avanza",
+    models: "Standard MPV Charter",
     guests: "1 - 5 Guests",
     luggage: "3 Luggage Bags",
     price: 600000,
-    bestFor: "Budget-friendly travel, couples, and small families.",
+    bestFor: "Clean, air-conditioned, and highly reliable family car.",
     emoji: "🚗",
-    popular: false
-  },
-  {
-    id: 'premium-mpv',
-    name: "Premium MPV",
-    models: "Toyota Innova Reborn",
-    guests: "1 - 6 Guests",
-    luggage: "4 Luggage Bags",
-    price: 800000,
-    bestFor: "Luxury suspension, quiet cabins, and long mountain rides.",
-    emoji: "SUV",
     popular: true
-  },
-  {
-    id: 'minibus',
-    name: "Mini Bus Commuter",
-    models: "Toyota HiAce Commuter",
-    guests: "1 - 12 Guests",
-    luggage: "6 Luggage Bags",
-    price: 1200000,
-    bestFor: "Large families, friend groups, or carrying surf boards.",
-    emoji: "🚐",
-    popular: false
   }
 ];
 

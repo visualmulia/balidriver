@@ -150,18 +150,21 @@
   flex-wrap: wrap;
   gap: 16px;
   font-size: 0.85rem;
-  color: var(--accent-soft);
-  opacity: 0.75;
+}
+
+.footer-bottom-content p {
+  color: #ffffff !important;
+  opacity: 0.9;
 }
 
 .creator-credit a {
-  color: var(--primary-light);
+  color: #FFA726 !important;
   font-weight: 700;
   text-decoration: underline;
 }
 
 .creator-credit a:hover {
-  color: var(--white);
+  color: #FFB74D !important;
 }
 
 @media (max-width: 768px) {

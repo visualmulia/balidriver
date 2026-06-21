@@ -41,19 +41,19 @@ const Footer = () => {
             <p className="contact-intro">Feel free to message or call for custom tour itinerary planning:</p>
             
             <div className="footer-contact-items">
-              <a href="https://wa.me/6281289653355" target="_blank" rel="noopener noreferrer" className="footer-contact-item">
+              <a href="https://wa.me/6282236551616" target="_blank" rel="noopener noreferrer" className="footer-contact-item">
                 <span className="contact-icon-emoji">💬</span>
                 <div>
                   <h4>WhatsApp (24/7)</h4>
-                  <p>+62 812-8965-3355</p>
+                  <p>+62 822-3655-1616</p>
                 </div>
               </a>
 
-              <a href="tel:+6281289653355" className="footer-contact-item">
+              <a href="tel:+6282236551616" className="footer-contact-item">
                 <span className="contact-icon-emoji">📞</span>
                 <div>
                   <h4>Hotline Call</h4>
-                  <p>+62 812-8965-3355</p>
+                  <p>+62 822-3655-1616</p>
                 </div>
               </a>
             </div>
@@ -65,7 +65,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-divider"></div>
           <div className="footer-bottom-content">
-            <p>&copy; {currentYear} Kutut Wayan Bali Driver. All Rights Reserved.</p>
+            <p>&copy; {currentYear} FM Prabowo Bali Driver. All Rights Reserved.</p>
             <p className="creator-credit">
               Designed & Developed by <a href="https://kriya.web.id" target="_blank" rel="noopener noreferrer">Kriya Web Studio</a>
             </p>

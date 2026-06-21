@@ -11,11 +11,11 @@ const DriverProfile = () => {
         <div className="profile-visual">
           <div className="avatar-card glass-panel">
             <div className="avatar-wrapper">
-              <img src={profileImg} alt="Kutut Wayan - Bali Private Driver" className="avatar-img" />
+              <img src={profileImg} alt="FM Prabowo - Bali Private Driver" className="avatar-img" />
               <span className="availability-dot">Available Today 🟢</span>
             </div>
             
-            <h2 className="profile-name">Kutut Wayan</h2>
+            <h2 className="profile-name">FM Prabowo</h2>
             <p className="profile-title">Bali Tour Guide & Private Driver</p>
             
             <div className="tripadvisor-rating">
@@ -24,10 +24,10 @@ const DriverProfile = () => {
             </div>
 
             <div className="profile-quick-actions">
-              <a href="https://wa.me/6281289653355" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-wa">
+              <a href="https://wa.me/6282236551616" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-wa">
                 💬 WhatsApp Chat
               </a>
-              <a href="tel:+6281289653355" className="btn btn-secondary btn-call">
+              <a href="tel:+6282236551616" className="btn btn-secondary btn-call">
                 📞 Call Driver
               </a>
             </div>
@@ -41,7 +41,7 @@ const DriverProfile = () => {
             Your Trustworthy Companion to Explore <span className="highlight-orange">Bali Island</span>
           </h1>
           <p className="profile-bio">
-            Om Swastyastu! I am Wayan, a native Balinese private driver and tour guide. For more than 8 years, I have helped families, couples, and solo travelers navigate Bali safely while sharing the rich history, culture, and scenic hidden gems of my home island.
+            Om Swastyastu! I am FM Prabowo, a native Balinese private driver and tour guide. For more than 8 years, I have helped families, couples, and solo travelers navigate Bali safely while sharing the rich history, culture, and scenic hidden gems of my home island.
           </p>
 
           <div className="profile-features-grid">
